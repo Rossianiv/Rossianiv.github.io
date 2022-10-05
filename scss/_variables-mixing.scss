@@ -1,0 +1,29 @@
+//variables
+$bg-1 : #805fb6 ;
+$bg-2: #1f2232;
+$f-color: #e3bac6;
+$f-color-2: #6e1a8b;
+$font-1:  'Dancing Script' ; 
+$font-2: 'Dosis' ;
+$typewriterSpeed: 5s; 
+
+
+//mixing
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin grid-centrado {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

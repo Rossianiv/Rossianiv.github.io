@@ -1,0 +1,254 @@
+:root {--typewriterSpeed: 5s; }
+
+main.main-index {
+    @include grid-centrado;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "img-w img-w"
+                         "subt p"
+                         " memb memb "
+                         "disco disco"    ;
+    gap: 4em 2em;
+    padding: 4em;
+
+
+    //pagina de bienvenida
+        div.img-welcome {
+            grid-area: img-w;
+            @include flex-centrado;
+            padding: 0;
+            width: auto;
+            img {
+                height: auto ;
+                width: 75%;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+                border-radius: 2em;
+            }
+        }
+
+    //Acerca de la pagina
+    div.subtitulo {
+        grid-area: subt;
+        @include flex-centrado;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    div.p-right {
+        grid-area: p;
+        p {
+            margin: 1.5em;
+            font-size: 1.5rem;
+            font-family: 'Dosis';
+            opacity: 0;
+            transform: translateX(3rem);
+            animation: fadeInLeft 2s ease calc( var(--typewriterSpeed) + 1s ) forwards;
+        }
+    }
+    
+
+    //seccion "miembros"
+    div#memb {
+        grid-area: memb;
+        @include flex-centrado;
+        justify-content: space-around;   
+        padding: 1em; 
+
+    }
+    //seccion "discografia"
+    
+        div#disco {
+            grid-area: disco;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: center;    
+            padding-top: 2em;               
+}
+            a {
+                text-decoration: none;
+                cursor: pointer; 
+            }
+
+}
+
+//clases y id's
+
+.subt {
+    font-family: 'Dancing Script';
+    @include flex-centrado;
+    font-size: 4rem;
+    padding: 0;
+}
+
+//animaciones 
+
+div.animated-pic {
+    transform: perspective(3000px) rotateY(5deg);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transition: transform 1s ease 0s; 
+    width: 45vw;
+    padding: 0 ;
+}  
+
+div.animated-pic a img {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+div.animated-pic:hover {
+    transform: perspective(1500px) rotateY(15deg);
+    }
+
+.animated-sub-2 {
+    animation: gradiente-subt 10s ease-in-out 1s infinite reverse ;
+    background-image: linear-gradient(219deg, rgba(34,193,195,1) 29%, rgba(156,45,253,1) 100%);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}    
+
+.animated-sub {
+    position: relative; 
+    place-content: center;
+    text-align: center;
+    width: max-content;
+    margin-left: 1em;
+    font-size: 3rem;
+}
+
+h2.animated-sub::before, h2.animated-sub::after  {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    
+}
+
+h2.animated-sub::before {
+    background: linear-gradient(32deg, rgba(218,184,211,1) 0%, rgba(205,182,219,1) 93%);
+    animation: typewriter 5s steps(24) 2s forwards;
+}
+
+h2.animated-sub::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter 5s steps(24) 2s forwards,
+    blink 750ms steps(24) infinite ;
+}
+
+//keyframes
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradiente-subt {
+    0% {
+        background-position: 0 50%;
+    }
+
+    25% {
+        background-position: 75% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75%{
+        font-size: 75% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+//queris
+
+@media only screen and (max-width: 1024px) {
+    main.main-index {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: "img-w"
+                             "subt" 
+                             "p"
+                             " memb"
+                             "disco";
+        grid-gap: 3em;
+        padding: 2em;
+        div.animated-sub {
+            grid-area: subt;        
+        }
+        div.subtitulo {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 3rem;
+    }
+    div.p-right {
+        display: flex;
+        text-align: justify;
+    }
+}
+}
+@media only screen and (max-width: 760px) {
+    main.main-index {
+        gap: 1em;
+        div.img-welcome img {
+            height: auto;
+            width: 80vw;
+            max-width: 100%; 
+            margin-bottom: 2em;
+        }
+        div.p-right p {
+            padding: .5em;
+            font-size: 1rem;
+        }
+
+        div#memb, div#disco {
+            flex-direction: column;
+            gap: 2em;
+            padding: 0;
+                h2 {
+                    font-size: 3rem;
+                }
+                .animated-pic {
+                    width: 70vw;
+                }
+
+        }
+    }
+
+    h2.subt.animated-sub {
+        font-size: 2.6rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    
+}

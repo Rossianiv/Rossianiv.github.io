@@ -1,0 +1,15 @@
+$imagen-cada-uno-grid-area: (
+    img-nj: nj ,
+    img-sj: sj ,
+    img-yg: yg ,
+    img-hs: hs ,
+    img-jm: jm ,
+    img-th: th ,
+    img-jk: jk ,
+);
+
+@each $class, $grid-area-name in $imagen-cada-uno-grid-area {
+    .#{$class} {
+        grid-area: $grid-area-name;
+    }
+}

@@ -1,0 +1,56 @@
+//Tipografia
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dosis:wght@500&family=Noto+Serif+KR:wght@500&family=Sacramento&display=swap');
+
+//Reset
+*{
+    @include reset;
+}
+   
+  :root {
+      --color-primario : #5C2880;
+      --color-secundario: #c9a4e2;
+  }
+  
+  a {
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+  }
+  
+  p a {
+      display: inline;
+      font-weight: bold;
+      
+  }
+  
+  li {
+      list-style-type: none;
+  }
+
+  img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    padding: 0px 50px 25px 50px
+}
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  ::selection {
+      background-color: var(--color-primario);
+      color: var(--color-secundario);
+  }
+  /*END RESET*/
+
+main {
+    height: auto;
+    background: linear-gradient(55deg, rgba(252,207,186,1) 0%, rgba(211,179,216,1) 50%, rgba(159,201,239,1) 100%);
+}
+
+body {
+    overflow-x: hidden;
+}

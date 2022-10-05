@@ -1,0 +1,146 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 8%;
+    background-color:$bg-1; 
+    min-height: 16vh;
+
+    div {
+        display: flex;
+        align-items: center;
+        a {
+            img.logo {
+                width: auto;
+                height: 13vh;
+                cursor: pointer;
+                padding: 0px;  
+                margin-right: 20px; 
+            }
+        }
+        h1 {
+            a {
+                font-family: 'Dancing Script';
+                font-size: 3rem;
+                text-decoration: none;
+                color: black;
+            }
+            
+        }
+    }
+    nav {
+        ul {
+            
+            li { 
+                
+                list-style-type: none;
+                display: inline-block;
+                padding: 0px 15px;
+                font-family: "Dosis";
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: rgb(34, 18, 36);
+               
+                a {
+                    text-decoration: none;
+                    list-style-type: none;
+                    display: inline-block;
+                    padding: 0px 15px;
+                    font-family: "Dosis";
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: #431d5e;
+                    transition:  all 0.3s ease 0s;
+                    &:hover {
+                        color: #ffffff;
+                    }
+
+                }
+            }
+        }
+    }
+ }
+
+//clases
+ .about {
+    padding: 9px 25px;
+    background-color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:  all 0.3s ease 0s;
+    color: white;
+}
+
+.about:hover {
+    background-color: #CFB4D6;
+    color: #5C2880;
+} 
+
+//mediaquery
+
+ @media only screen and (max-width: 1024px) {
+    header {
+       flex-direction: column;
+       padding: 1em 8%;
+       div {
+            a {
+                img.logo {
+                    width: auto;
+                    height: 10vh;
+                }
+            }
+            h1 {
+                a {
+                   font-size: 2.5rem;  
+                }
+                  
+            }
+       }
+       nav {
+            ul{
+                li {
+                    a {
+                    font-size: 1.5rem;
+                    padding-top: 10px;
+                }}
+            }
+       }
+    }    
+}
+
+@media only screen and (max-width: 580px) { 
+    header {
+        flex-direction: row;
+        padding: 1em 8%;
+        div {
+             a {
+                 img.logo {
+                     width: auto;
+                     height: 9vh;
+                 }
+             }
+             h1 {
+                 a {
+                    font-size: 1.1rem;  
+                 }
+                   
+             }
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+             ul{
+                 li {
+                    padding: 0;
+                    margin: 0;
+                     a {
+                     font-size: 1rem;
+                     padding-top: .3rem;
+                 }}
+             }
+        }
+     } 
+}

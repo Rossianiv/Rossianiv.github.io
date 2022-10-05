@@ -1,0 +1,258 @@
+.contenido-dico {
+    height: 100%;
+    width: 100%;
+	display: grid;
+	grid-gap: 1.3em;
+    padding: 4em;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: "cov cov cov about about about"
+						 "song-l song-l videos videos videos videos"
+                         "galery galery galery galery galery galery"
+						 ;
+        div.cov {
+        grid-area: cov;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            img {
+                height: auto ;
+                width: 23em;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+                border-radius: 1.2rem;
+            }
+        }
+        }
+        div.song-l {
+        grid-area: song-l;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        ul {
+            h2 {
+                text-align: center;
+            }
+            li {
+            font-family: $font-2;
+            list-style-type: none;
+            font-size: 1em;
+            }
+        }
+        }
+        aside.sidebar {
+        grid-area: videos;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        
+        div {
+            
+            iframe {
+                padding: 0px;
+                width: 29em;
+                height: 19em;
+                border-radius: 1.2rem;
+                margin-bottom: 2em;
+            }
+        }
+        }
+        div.p-left-bg {
+        grid-area: about;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+            font-family: $font-2;
+            text-align: right;
+            
+        }
+        } 
+        div.widget-2 {
+        grid-area: galery;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 14vh 1fr 1fr;
+        grid-template-areas: "tt-g tt-g tt-g tt-g"
+                                "nj sj yg hs"
+                                "jm th jk link-discografia";
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-gap: .5em;
+        div.title-galery {
+            grid-area: tt-g;
+        }
+        
+        div.link-discografia {
+            grid-area: link-discografia;
+            display: flexbox;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin: 1em;
+        }
+        img {
+            height: auto ;
+            width: 400px;
+            padding: 0;
+            margin: 0;
+            max-width: 100%; 
+            border-radius: 1.2rem;           
+        }
+        }
+    }
+
+//clases y ids, transiciones, transformaciones
+
+.subt-2 {
+    font-family: $font-1;
+    padding: 2em 0 1em 0;
+    font-size: 3em;
+}
+
+.trt-img {
+    width: 100%;
+    margin: .7em .7em ;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+    transition: 1s;
+}
+
+.trt-img:hover {
+    transform: scale(1.3);
+    z-index: 2;
+}
+
+  .block-reveal {
+    --t: calc(var(--td) + var(--d));
+  
+    color: transparent;
+    padding: 4px;
+  
+    position: relative;
+    overflow: hidden;
+  
+    animation: revealBlock 0s var(--t) forwards;
+  }
+  
+  .block-reveal::after {
+    content: '';
+  
+    width: 0%;
+    height: 100%;
+    padding-bottom: 4px;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    background: var(--bc);
+    animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+  }
+  
+  
+  /* animations */
+  @keyframes revealBlock {
+    100% {
+      color: #0f0f0f;
+    }
+  }
+  
+  @keyframes revealingIn {
+  
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes revealingOut {
+  
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(100%);
+    }
+  
+  }
+
+
+@media screen and (max-width: 1024px){
+	.contenido-dico {
+    grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "cov about"
+						 "song-l song-l"
+                         "videos videos" 
+                         " galery galery";
+    row-gap: 2em;
+
+        div.widget-2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, auto);
+            grid-template-areas: "tt-g tt-g"
+                                "nj sj"
+                                "yg hs"
+                                "jm th"
+                                "jk link-discografia";
+             
+        }
+        div.p-left-bg {   
+            p {
+                text-align: justify;    
+            }
+            } 
+	}
+    
+}
+
+@media screen and (max-width: 500px){
+	.contenido-dico {
+    grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "about"
+                         "song-l"
+                         "cov"   
+						 "videos" 
+                         "galery";
+    row-gap: 2em;
+        div, aside {
+            height: auto ;
+            width: 24em;
+            padding: 0;
+            margin: 0;
+            max-width: 100%;    
+        }
+
+        div.widget-2 {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5 repeat(8, 1fr);
+            grid-template-areas: "tt-g"
+                                 "nj" 
+                                 "sj"
+                                 "yg"
+                                 "hs"
+                                 "jm"
+                                 "th"
+                                 "jk"
+                                 "link-discografia";
+            row-gap: 2em;
+	    }
+        div.p-left-bg {   
+            p {
+                text-align: center;    
+            }
+            } 
+    }
+}

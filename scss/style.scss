@@ -1,0 +1,33 @@
+//  MODULOS
+
+//variables y mixing
+@import './variables-mixing'; 
+//global
+@import './global';
+//each
+@import './each';
+//header 
+@import './header';
+//footer
+@import './footer';
+//body-index
+@import './body-index';
+//body-discografia 
+@import './body-discografia';
+//body-discografia individual
+@import './body-discografia-cd-u';
+//body-miembros
+@import './body-miembros';
+//body-contacto
+@import './body-contacto'; 
+
+/* Listado de animaciones
+    .style-cover AGRANDA LA CARATULA Y LA ENDEREZA
+    .about AGREGA FONDO OVALADO Y CAMBIA COLOR DE LETRA, COMO UN BOTON
+    .animated-pic IMAGEN SE INCLINA SOBRE EL EJE X 
+    .animated-sub TITULO CON EFECTO DE TIPEADO
+    .p-right PARRAFO APARECE DE DERECHA A IZQUIERDA
+    .animated-sub-2 TITULO CON EFECTO DEGRADADO QUE VA MOVIENDO CON LAS LETRAS ESTATICAS
+    .block-reveal  2 BGS QUE CUBRE DIV Y LO DESCUBREN A DISTINTOS TIEMPOS
+  
+*/

@@ -1,0 +1,150 @@
+main.grid-main-discografia {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: repeat(7, 1fr) ;
+    grid-template-areas:"cv1 cv2 cv3"
+                        "cv4 cv5 cv6"
+                        "cv7 cv8 cv9"
+                        "cv10 cv11 cv12"
+                        "cv13 cv14 cv15"
+                        "cv16 cv17 cv18"
+                         "cv19 . link-disco" ;
+                        align-items: center;
+                        justify-items: center;
+                        align-content: center;
+                        justify-content: center;                    
+    grid-gap: 2em;
+    padding: 1em;
+    div.style-cover {
+        a {
+            img {
+                height: auto ;
+                width: 25em;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+}
+}
+
+//clases y id's
+
+#cv1 {
+    grid-area: cv1;
+}
+#cv2 {
+    grid-area: cv2;
+}
+#cv3 {
+    grid-area: cv3;
+}#cv4 {
+    grid-area: cv4;
+}#cv5 {
+    grid-area: cv5;
+}#cv6 {
+    grid-area: cv6;
+}#cv7 {
+    grid-area: cv7;
+}#cv8 {
+    grid-area: cv8;
+}#cv9 {
+    grid-area: cv9;
+}#cv10 {
+    grid-area: cv10;
+}
+#cv11 {
+    grid-area: cv11;
+}#cv12 {
+    grid-area: cv12;
+}#cv13 {
+    grid-area: cv13;
+}#cv14 {
+    grid-area: cv14;
+}#cv15 {
+    grid-area: cv15;
+}#cv16 {
+    grid-area: cv16;
+}#cv17 {
+    grid-area: cv17;
+}#cv18 {
+    grid-area: cv18;
+}#cv19 {
+    grid-area: cv19;
+}
+.link-disco{
+    grid-area: link-disco ;
+}
+
+//mediaquerys
+
+@media only screen and (max-width: 1024px) {
+    main.grid-main-discografia {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(10, 1fr) ;
+        grid-template-areas:"cv1 cv2"
+                            "cv3 cv4"
+                            "cv5 cv6"
+                            "cv7 cv8"
+                            "cv9 cv10"
+                            "cv11 cv12"
+                            "cv13 cv14"
+                            "cv15 cv16"
+                            "cv17 cv18"
+                            "cv19 link-disco" ;
+        grid-gap: 0;
+        padding: 1em 0 1em 0;
+    }
+
+    
+}
+
+@media only screen and (max-width: 500px) {
+    main.grid-main-discografia {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20, auto) ;
+        grid-template-areas:"cv1"
+                            "cv2"
+                            "cv3" 
+                            "cv4"
+                            "cv5" 
+                            "cv6"
+                            "cv7" 
+                            "cv8"
+                            "cv9" 
+                            "cv10"
+                            "cv11" 
+                            "cv12"
+                            "cv13" 
+                            "cv14"
+                            "cv15" 
+                            "cv16"
+                            "cv17" 
+                            "cv18"
+                            "cv19"
+                            "link-disco" ;
+        padding: 1em 0 1em 0;
+    }
+    
+
+}
+
+
+/*transformaciones-animaciones*/
+
+div.style-cover {
+    transform:
+      perspective(750px)
+      translate3d(0px, 0px, -250px)
+      rotateX(27deg)
+      scale(0.9, 0.9);
+    
+    
+    box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
+    transition: 0.4s ease-in-out transform;
+    width: auto;
+   
+}  
+div:hover.style-cover {
+      transform: translate3d(0px, 0px, -250px);
+} 
